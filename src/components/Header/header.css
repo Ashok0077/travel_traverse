@@ -1,6 +1,4 @@
-/* Header.css */
 
-/* Navbar container */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -10,34 +8,29 @@
     color: white;
   }
   
-  /* Logo container */
   .logo {
     display: flex;
     align-items: center;
   }
   
-  /* Logo image */
   .logo img {
     width: 60px;
     height: auto;
     margin-right: 0.5rem;
   }
   
-  /* Logo text */
   .logo span {
     color: orange;
     font-size: 1.5rem;
     cursor: default;
   }
   
-  /* Navigation links */
   .navigation ul {
     list-style: none;
     display: flex;
     gap: 1rem;
   }
   
-  /* Navigation link */
   .navigation a {
     color: black;
     text-decoration: none;
