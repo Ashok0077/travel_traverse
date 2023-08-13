@@ -1,7 +1,8 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
+import { Link,NavLink } from 'react-router-dom';
 import "./header.css"
 import logo from '../../assets/images/logo.png'
+
 
 const navlinks=[
     {
@@ -9,7 +10,7 @@ const navlinks=[
     display:'Home'
     },
     {
-    path:'#',
+    path:'/about',
     display:'About'
     },
     {
@@ -44,7 +45,7 @@ function header() {
         {
             navlinks.map((item,index)=>(
                 <li>
-                     <Link to={item.path}>{item.display}</Link>
+                      <NavLink to={item.path} className={navClass=>navClass.isActive ? 'active_link':""}>{item.display}</NavLink>
                 </li>
             ))
         }

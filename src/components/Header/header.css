@@ -42,6 +42,9 @@
     color: orange;
   }
   
+  .navigation a.active_link {
+    color:orange;
+  }
   .auth-buttons {
     display: flex;
     gap: 1rem;
