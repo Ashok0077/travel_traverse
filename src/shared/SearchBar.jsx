@@ -1,9 +1,9 @@
-import React from 'react';
+import React,{useRef} from 'react';
 import './SearchBar.css';
-import { Col, FormGroup } from 'reactstrap';
-import { Form } from 'react-router-dom';
+import { Col, Form , FormGroup } from 'reactstrap';
 
-function SearchBar() {
+const SearchBar=() => {
+    const 
   return (
     <Col lg='12'>
       <div className='search_bar'>
@@ -29,6 +29,8 @@ function SearchBar() {
               <input type="number" placeholder='0' />
             </div>
           </FormGroup>
+
+          <span className="search_icon" type="submit"><i class="ri-search-line"></i></span>
         </Form>
       </div>
     </Col>

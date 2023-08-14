@@ -9,17 +9,18 @@ import SearchBar from '../shared/SearchBar';
 
 function Home() {
   return (<>
+  <div className='container'>
     <div className="home-container">
       <section className="text-section">
         <div className='quote'>
           <Subtitle subtitle={'Know Before You Go'}/>
-          <img src={WorldImg}/>
+          <img src={WorldImg} alt="World" />
         </div>
         <h1>Travel More, Create Stories that Last a <span>Lifetime.</span></h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro qui nobis quos accusamus facilis voluptatem reprehenderit eligendi veniam eaque ratione dignissimos totam aspernatur saepe ab labore, explicabo.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit Lorem ipsum dolor sit amet consectetur, adipisicing elit. Culpa asperiores quidem temporibus tempore tempora.</p>
       </section>
       <section className="media-section">
-        <div className="image-container ">
+        <div className="image-container">
           <img src={heroImg} alt="Image 1" />
         </div>
         <div className="video-container">
@@ -32,8 +33,12 @@ function Home() {
           <img src={heroImg02} alt="Image 2" />
         </div>
       </section>
-    </div>
-    </>
+   </div>
+   < div className='search-bar'>
+    <SearchBar></SearchBar>
+   </div>
+</div>
+</>
   );
 }
 

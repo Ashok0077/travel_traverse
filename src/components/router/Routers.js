@@ -6,6 +6,7 @@ import TourDetail from'../../pages/TourDetail';
 import Login from'../../pages/Login';
 import Register from'../../pages/Register';
 import SearchResultList from'../../pages/SearchResultList';
+import SearchBar from '../../shared/SearchBar';
 function Routers() {
   return (<>
    <Routes> 
@@ -16,6 +17,7 @@ function Routers() {
       <Route path="/login" element={<Login/>} />
       <Route path="/register" element={<Register/>} />
       <Route path="/tours/search" element={<SearchResultList/>} />
+      <Route path="/home" element={<SearchBar/>} />
    </Routes>
    </>
   )
