@@ -94,3 +94,20 @@
     margin-right: 2%;
 
   }
+
+  .services_subtitle{
+    font-size: 2.2rem;
+    font-weight: 500;
+    color: #ee6e6e;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  }
+
+  .service_title{
+    font-size: 2.2rem;
+    font-weight: 500;
+  }
+
+  .featured_tour-title{
+    font-style: 2.5rem;
+    font-weight: 500;
+  }

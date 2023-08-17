@@ -1,11 +1,14 @@
 import React from 'react';
 import './../styles/home.css';
+import { Container, Row, Col } from 'reactstrap';
 import heroImg from '../assets/images/hero-img01.jpg'
 import heroImg02 from '../assets/images/hero-img02.jpg'
 import heroVideo from '../assets/images/hero-video.mp4'
 import WorldImg from '../assets/images/world.png'
 import Subtitle from '../shared/Subtitle';
 import SearchBar from '../shared/SearchBar';
+
+import ServiceList from '../services/ServiceList';
 
 function Home() {
   return (<>
@@ -36,7 +39,29 @@ function Home() {
    </div>
    < div className='search-bar'>
     <SearchBar></SearchBar>
+    <section>
+    <Container>
+      <Row>
+        <Col lg='3'>
+          <h5 className="services_subtitle">What we serve</h5>
+          <h2 className='services_title'>We offer our best services</h2>
+        </Col>
+        <ServiceList/>
+      </Row>
+    </Container>
+   </section>
+   <section>
+    <Container>
+      <Row>
+        <Col lg='12' className='"mb-5'>
+          <Subtitle subtitle={'Explore'}/>
+          <h2 className="featured_tour-title">Our featured tours</h2>
+        </Col>
+      </Row>
+    </Container>
+   </section>
    </div>
+  
 </div>
 </>
   );
