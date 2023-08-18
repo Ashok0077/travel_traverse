@@ -12,7 +12,7 @@ import ServiceList from '../services/ServiceList';
 
 function Home() {
   return (<>
-  <div className='container'>
+  <Container>
     <div className="home-container">
       <section className="text-section">
         <div className='quote'>
@@ -37,8 +37,11 @@ function Home() {
         </div>
       </section>
    </div>
-   < div className='search-bar'>
+   <section>
+   < div className='search-bar '>
     <SearchBar></SearchBar>
+    </div>
+    </section>
     <section>
     <Container>
       <Row>
@@ -60,9 +63,9 @@ function Home() {
       </Row>
     </Container>
    </section>
-   </div>
+   
   
-</div>
+   </Container>
 </>
   );
 }
