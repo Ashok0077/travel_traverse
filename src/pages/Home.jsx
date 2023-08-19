@@ -7,6 +7,7 @@ import heroVideo from '../assets/images/hero-video.mp4'
 import WorldImg from '../assets/images/world.png'
 import Subtitle from '../shared/Subtitle';
 import SearchBar from '../shared/SearchBar';
+import FeaturedTourList from '../components/Featured-tours/FeaturedTourList';
 
 import ServiceList from '../services/ServiceList';
 
@@ -37,11 +38,15 @@ function Home() {
         </div>
       </section>
    </div>
+   </Container>
+   <Container>
    <section>
+    
    < div className='search-bar '>
     <SearchBar></SearchBar>
     </div>
     </section>
+    </Container>
     <section>
     <Container>
       <Row>
@@ -60,12 +65,13 @@ function Home() {
           <Subtitle subtitle={'Explore'}/>
           <h2 className="featured_tour-title">Our featured tours</h2>
         </Col>
+        <FeaturedTourList/>
       </Row>
     </Container>
    </section>
    
   
-   </Container>
+  
 </>
   );
 }
