@@ -49,3 +49,26 @@
     font-size: 1.1rem;
     cursor: pointer;
 }
+
+.tour_title a{
+    text-decoration: none;
+    color: var(--heading-color);
+    transition: 0.3s;
+}
+
+.tour_title a:hover{
+    color: var(--secondary-color);
+}
+
+.card_botton h5{
+    color: var(--secondary-color);
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.card_botton h5 span{
+    font-weight: 500;
+    color: var(--text-color);
+    font-size: 0.8rem;
+}
+
