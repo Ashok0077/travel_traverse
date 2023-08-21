@@ -87,6 +87,14 @@ function Home() {
             <span>12k+</span>
             <h6>Successfull Trip</h6>
           </div>
+          <div className="counter_box">
+            <span>2k+</span>
+            <h6>Regular clients</h6>
+          </div>
+          <div className="counter_box">
+            <span>15</span>
+            <h6>Years experience</h6>
+          </div>
         </div>
         </Col>
         <Col lg='6'>
