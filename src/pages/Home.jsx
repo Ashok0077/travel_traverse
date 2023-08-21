@@ -40,7 +40,7 @@ function Home() {
    </div>
    </Container>
    <Container>
-   <section>
+   <section >
     
    < div className='search-bar '>
     <SearchBar></SearchBar>
@@ -66,6 +66,32 @@ function Home() {
           <h2 className="featured_tour-title">Our featured tours</h2>
         </Col>
         <FeaturedTourList/>
+      </Row>
+    </Container>
+   </section>
+
+   <section>
+    <Container>
+      <Row>
+        <Col lg='6'>
+        <div className="experience_content">
+          <Subtitle subtitle={'Experience'}/>
+
+          <h2>With our all experience <br/> we will serve you</h2>
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+            <br/>
+          Ex corporis culpa non blanditiis, sunt odit! Natus ex soluta nesciunt ipsum </p>
+        </div>
+        <div className="counter_wrapper d-flex align-items-center gap-5">
+          <div className="counter_box">
+            <span>12k+</span>
+            <h6>Successfull Trip</h6>
+          </div>
+        </div>
+        </Col>
+        <Col lg='6'>
+        
+        </Col>
       </Row>
     </Container>
    </section>

@@ -60,15 +60,28 @@
     color: var(--secondary-color);
 }
 
-.card_botton h5{
+.card_bottom h5{
     color: var(--secondary-color);
     font-size: 1.1rem;
     font-weight: 700;
 }
 
-.card_botton h5 span{
+.card_bottom h5 span{
     font-weight: 500;
     color: var(--text-color);
     font-size: 0.8rem;
 }
 
+.card_bottom button {
+    background-color: orange;
+    border: none;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    padding: 0.2rem 0.5rem;
+}
+
+.card_bottom .booking_btn a{
+    text-decoration: none;
+    font-size: 0.9rem;
+    color: white;
+}
