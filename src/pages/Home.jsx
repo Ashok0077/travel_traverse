@@ -10,6 +10,7 @@ import Subtitle from '../shared/Subtitle';
 import SearchBar from '../shared/SearchBar';
 import FeaturedTourList from '../components/Featured-tours/FeaturedTourList';
 import MasonryImagesGallery from '../components/Image-gallery/MasonryImagesGallery';
+import Testimonial from '../components/Testimonial/Testimonial';
 
 import ServiceList from '../services/ServiceList';
 
@@ -117,6 +118,18 @@ function Home() {
         </Col>
         <Col lg='12'>
           <MasonryImagesGallery/>
+        </Col>
+      </Row>
+    </Container>
+   </section>
+
+   <section>
+    <Container>
+      <Row>
+        <Col lg='12'>
+          <Subtitle subtitle={'Customers Love'}/>
+          <h2 className='testimonial_title'>What our customers say about us</h2>
+          <Testimonial/>
         </Col>
       </Row>
     </Container>
