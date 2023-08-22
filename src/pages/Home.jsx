@@ -9,6 +9,7 @@ import experienceImg from '../assets/images/experience.png'
 import Subtitle from '../shared/Subtitle';
 import SearchBar from '../shared/SearchBar';
 import FeaturedTourList from '../components/Featured-tours/FeaturedTourList';
+import MasonryImagesGallery from '../components/Image-gallery/MasonryImagesGallery';
 
 import ServiceList from '../services/ServiceList';
 
@@ -115,7 +116,7 @@ function Home() {
           <h2 className="gallery_title">Visit our customers tour gallery</h2>
         </Col>
         <Col lg='12'>
-          
+          <MasonryImagesGallery/>
         </Col>
       </Row>
     </Container>
