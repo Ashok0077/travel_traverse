@@ -11,6 +11,7 @@ import SearchBar from '../shared/SearchBar';
 import FeaturedTourList from '../components/Featured-tours/FeaturedTourList';
 import MasonryImagesGallery from '../components/Image-gallery/MasonryImagesGallery';
 import Testimonial from '../components/Testimonial/Testimonial';
+import Newsletter from '../shared/Newsletter';
 
 import ServiceList from '../services/ServiceList';
 
@@ -134,6 +135,8 @@ function Home() {
       </Row>
     </Container>
    </section>
+
+   <Newsletter></Newsletter>
    
   
   
