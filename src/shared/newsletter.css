@@ -40,10 +40,15 @@
 .btn.newsletter_btn{
     padding: 0.5rem 1.5rem !important;
     background-color: var(--secondary-color);
-    color: #fff;
+    color: #fff !important;
     font-size: 1.1rem !important;
 }
 
 .btn.newsletter_btn:hover {
     background-color: rgb(255, 176, 29);
   }
+
+.newsletter_content p{
+    color: var(--heading-color);
+    font-size: 1.1rem;
+}
