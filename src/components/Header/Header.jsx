@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useRef, useEffect} from 'react'
 import { Link,NavLink } from 'react-router-dom';
 import "./header.css"
 import logo from '../../assets/images/logo.png'
@@ -33,9 +33,27 @@ const authbutton=[
 ];
 
 
-function header() {
+const Header=()=> {
+
+  const headerRef=useRef(null)
+
+  const stickyHeaderFunc=()=>{
+    window.addEventListener('scroll',()=>{
+      if(document.body.scrollTop>80 || document.documentElement.scrollTop>80){
+        headerRef.current.classList.add('sticky_navbar')
+      }else{
+        headerRef.current.classList.remove('sticky_navbar')
+      }
+    })
+  }
+  
+  useEffect(()=>{
+    stickyHeaderFunc()
+
+    return window.removeEventListener('scroll',stickyHeaderFunc)
+  })
   return (
-    <header className="navbar">
+    <header className="navbar" ref={headerRef}>
     <div className="logo">
       <img src={logo} alt="Logo" />
       <span>TravelTraverse</span>
@@ -62,4 +80,4 @@ function header() {
   )
 }
 
-export default header
+export default Header

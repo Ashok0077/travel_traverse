@@ -3,17 +3,19 @@
     padding-bottom: 30px;
 }
 
-.footer .logo img{
-    width: 50%;
-    margin-bottom: 1rem;
+.Flogo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.footer .logo img{
-    width: 50%;
-    margin-bottom: 1rem;
-}
+.Flogo img {
+    width: 60px;
+    height: auto;
+    margin-right: 0.5rem;
+  }
 
-.footer .logo p{
+.footer .Flogo p{
     color: var(--text-color);
 }
 .social_links span a{
@@ -33,4 +35,13 @@
     font-size: 1.1rem;
 }
 
+.footer_quick-links h6 span i{
+    color: var(--secondary-color);
+    font-style: 1.1rem;
+}
+
+.copyright{
+    color: var(--text-color);
+    font-size: 1rem;
+}
 

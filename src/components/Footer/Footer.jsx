@@ -34,15 +34,16 @@ const quick_links2=[
   },    
 ];
 
+
 function Footer() {
+
   return (
-   <Container>
+   <Container className='footer'>
     <Row>
       <Col lg="3">
-        <div className="logo">
+        <div className="Flogo d-flex align-items-center justify-content-center">
           <img src={logo} alt="" />
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Maxime asperiores</p>
+          <p>Lorem ipsum dolor sit amet consectetur</p>
             <div className="social_links d-flex align-items-center gap-4">
               <span>
                 <Link to='#'><i class="ri-youtube-line"></i></Link>
@@ -85,16 +86,38 @@ function Footer() {
       </Col>
       <Col lg='3'>
       <h5 className="footer_link-title">Contact</h5>
-        <ListGroup className='footer_quick-links'>
-              <ListGroupItem className='ps-0 border-0 d-flex align-items-center gap-3 '>
-
-                <h6 className="mb-0 d-flex align-items-center">
+        <ListGroup className="footer_quick-links">
+              <ListGroupItem className="ps-0 border-0 d-flex align-items-center gap-3 ">
+                <h6 className="mb-0 d-flex align-items-center gap-2">
                   <span><i class="ri-map-pin-line"></i></span>
                   Address:
-                </h6><p>Delhi, India</p>
+                </h6>
+                <p className="mb-0">Delhi, India</p>
+               
+              </ListGroupItem>
+
+              <ListGroupItem className="ps-0 border-0 d-flex align-items-center gap-3 ">
+                <h6 className="mb-0 d-flex align-items-center gap-2">
+                  <span><i class="ri-mail-line"></i></span>
+                  Email:
+                </h6>
+                <p className="mb-0">vaishnavashok729@gmail.com</p>
+               
+              </ListGroupItem>
+
+              <ListGroupItem className="ps-0 border-0 d-flex align-items-center gap-3 ">
+                <h6 className="mb-0 d-flex align-items-center gap-2">
+                  <span><i class="ri-phone-fill"></i></span>
+                  Phone:
+                </h6>
+                <p className="mb-0">+01 12345689</p>
                
               </ListGroupItem>
         </ListGroup>
+      </Col>
+
+      <Col lg='12'className="text-center pt-5" >
+       <p className="copyright">Copyright 2023, design and developed by AV. All rights reserved</p>
       </Col>
     </Row>
    </Container>
