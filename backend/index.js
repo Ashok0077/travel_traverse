@@ -17,10 +17,15 @@ const app = express()
 const port = process.env.PORT || 8000
 const corsOptions = {
     origin:true,
-    Credentials:true
+    credentials:true
 }
 
-// database connection
+
+app.use(cors({
+    origin: 'http://localhost:3000',
+    credentials: true
+}));
+
 mongoose.set("strictQuery", false)
 const connect=async()=>{
     try {
