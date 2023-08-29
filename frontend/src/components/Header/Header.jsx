@@ -1,7 +1,9 @@
-import React,{useRef, useEffect} from 'react'
-import { Link,NavLink } from 'react-router-dom';
+import React,{useRef, useEffect,useContext} from 'react'
+import { Link,NavLink,useNavigate } from 'react-router-dom';
 import "./header.css"
 import logo from '../../assets/images/logo.png'
+import { AuthContext } from '../../context/AuthContext';
+import { Button } from 'reactstrap';
 
 
 const navlinks=[
@@ -36,6 +38,13 @@ const authbutton=[
 const Header=()=> {
 
   const headerRef=useRef(null)
+  const navigate = useNavigate()
+  const {user, dispatch} = useContext(AuthContext)
+
+  const logout = () =>{
+    dispatch({type:'LOGOUT'})
+    navigate('/')
+  }
 
   const stickyHeaderFunc=()=>{
     window.addEventListener('scroll',()=>{
@@ -69,13 +78,22 @@ const Header=()=> {
         }
       </ul>
     </nav>
-    <div className="auth-buttons">
+    {
+      user? <>
+      <h5 className="mb-0">{user.username}</h5>
+      <Button className="btn btn-dark" onClick={logout}>Logout</Button>
+
+      </>:<>
+      <div className="auth-buttons">
         {
         authbutton.map((item,index)=>(
             <Link to={item.path} className={item.class}>{item.display}</Link>
         ))
         } 
       </div>
+      </>
+    }
+   
   </header>
   )
 }

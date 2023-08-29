@@ -1,23 +1,42 @@
 import React,{useRef} from 'react';
 import './SearchBar.css';
 import { Col, Form , FormGroup } from 'reactstrap';
+import { BASE_URL } from '../utils/config';
+import { useNavigate } from 'react-router-dom';
 
 const SearchBar=() => {
     const locationRef = useRef('')
     const distanceRef = useRef(0)
     const maxGroupSizeRef = useRef(0)
+    const navigate = useNavigate()
 
-    const searchHandler=()=>{
-
-        const location = locationRef.current.value
-        const distance = distanceRef.current.value
-        const maxGroupSize = maxGroupSizeRef.current.value
-
-        if(location==='' || distance==='' || maxGroupSize==='')
-        {
+    const searchHandler = async () => {
+      const location = locationRef.current.value;
+      const distance = distanceRef.current.value;
+      const maxGroupSize = maxGroupSizeRef.current.value;
+  
+      if (location === '' || distance === '' || maxGroupSize === '') {
           alert("All fields are required");
-        }
-
+          return; 
+      }
+  
+      try {
+          const res = await fetch(`${BASE_URL}/tours/search/getTourBySearch?city=${location}&distance=${distance}&maxGroupSize=${maxGroupSize}`);
+  
+          if (!res.ok) {
+              alert('Something went wrong');
+              return; 
+          }
+  
+          const result = await res.json();
+  
+          navigate(`/tours/search?city=${location}&distance=${distance}&maxGroupSize=${maxGroupSize}`, {
+              state: result.data
+          });
+      } catch (error) {
+          console.error('Fetch error:', error);
+        
+      }
 
     }
 
