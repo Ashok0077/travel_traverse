@@ -17,40 +17,44 @@ import ServiceList from '../services/ServiceList';
 
 function Home() {
   return (<>
-  <Container>
-    <div className="home-container">
-      <section className="text-section">
-        <div className='quote'>
-          <Subtitle subtitle={'Know Before You Go'}/>
-          <img src={WorldImg} alt="World" />
-        </div>
-        <h1>Travel More, Create Stories that Last a <span>Lifetime.</span></h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit Lorem ipsum dolor sit amet consectetur, adipisicing elit. Culpa asperiores quidem temporibus tempore tempora.</p>
-      </section>
-      <section className="media-section">
+  <section>
+    <Container>
+      <Row>
+        <Col lg='6'>
+          <div className='hero_content'>
+           <div className="quote d-flex align-items-center">
+           <Subtitle subtitle={'Know Before You Go'}/>
+           <img src={WorldImg} alt="World" />
+           </div>
+           <h1>Travel More, Create Stories that Last a <span className='highlight'>Lifetime.</span></h1>
+           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit Lorem ipsum dolor sit amet consectetur, adipisicing elit. Culpa asperiores quidem temporibus tempore tempora.</p>
+           </div>
+        </Col>
+
+        <Col lg='2'>
         <div className="image-container">
           <img src={heroImg} alt="Image1" />
         </div>
-        <div className="video-container">
+        </Col>
+        <Col lg='2'>
+        <div className="image-container hero_video-box mt-4">
           <video controls>
             <source src={heroVideo} type="video/mp4" />
             Your browser does not support the video tag.
           </video>
         </div>
-        <div className="image-container">
+        </Col>
+        <Col lg='2'>
+        <div className="image-container mt-5">
           <img src={heroImg02} alt="Image2" />
         </div>
-      </section>
-   </div>
-   </Container>
-   <Container>
-   <section >
-    
-   < div className='search-bar '>
-    <SearchBar></SearchBar>
-    </div>
-    </section>
+        </Col>
+
+        <SearchBar/>
+      </Row>
     </Container>
+  </section>
+
 
 
     <section>

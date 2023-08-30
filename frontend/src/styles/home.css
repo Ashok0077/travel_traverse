@@ -1,26 +1,15 @@
-.container {
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 15px;
-  padding-right: 15px;
-  width: 100%;
-  max-width: 1140px;
-}
-
-.home-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-left: 6%;
-    margin-right: 6%;
-    height:50vh;
+  .hero_content h1{
+    font-size: 3.2rem;
+    font-weight: 600;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    color: var(--heading-color);
   }
-  
-  .text-section {
-    flex: 1;
-    padding: 1rem;
-    background-color:white;
-    border-radius: 10px;
+
+  .hero_content p{
+    font-size: 1.1rem;
+    color: var(--text-color);
+    line-height: 2rem;
   }
 
   .quote{
@@ -34,68 +23,30 @@
     height: 2.3rem;
   }
   
-  .text-section h1 {
-    font-size: 3.2rem;
-    font-weight: 600;
-    margin-top: 1rem;
-    margin-bottom: 2rem;
-  }
 
-  .text-section h1 span{
+   .highlight{
     color: orange;
   }
   
-  .text-section p{
-    font-size: 1.1rem;
-    line-height: 2rem;
-    color: var(--text-color);
-  }
 
-  .media-section {
-    flex: 1;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
   
-  .image-container,
-  .video-container {
-    flex: 1;
-    padding: 1rem;
-    border-radius: 10px;
-
-  }
-  
-  .image-container img {
+  .image-container img,
+  .image-container video {
     width: 100%;
     height: 350px;
     border-radius: 20px;
-    border: 1px solid rgb(70, 203, 203);
     object-fit: cover;
-  }
 
-  .video-container{
-    flex: 1;
-    padding: 1rem;
-    border-radius: 10px;
-    margin-top: 70px;
   }
   
-  .video-container video {
-    width: 100%;
-    height: 350px;
-    border-radius: 20px;
-    border: 1px solid rgb(70, 203, 203);
-    object-fit: cover;
+  .hero_content{
+    padding-top: 3.5rem;
+  }
+
+  .image-container{
+    padding-top: 2rem;
   }
   
-  .search-bar{
-    margin-top: 2rem;
-    margin-left: 2%;
-    margin-right: 2%;
-
-  }
-
   .services_subtitle{
     font-size: 2.2rem;
     font-weight: 700;
@@ -170,4 +121,43 @@
   .testimonial_title{
     font-size: 2.3rem;
     margin-top: 1rem;
+  }
+
+  @media only screen and (max-width: 992px){
+    .hero_content{
+      font-size: 2.7rem;
+    }
+
+    .image-container{
+      display: none;
+    }
+
+    .hero_video-box{
+      display: block;
+    }
+
+    .service_title, .featured_tour-title,
+    .gallery_title, .testimonial_title,
+    .experience_content h2{
+      font-size: 2rem;
+    }
+
+    .experience_img{
+      margin-top: 2rem;
+    }
+  }
+
+  @media only screen and (max-width: 576px){
+    .hero_content{
+      font-size: 1.8rem;
+      color: var(--text-color);
+    }
+
+    .service_title, 
+    .featured_tour-title,
+    .gallery_title,
+    .testimonial_title,
+    .experience_content h2{
+      font-size: 1.5rem;
+    }
   }
