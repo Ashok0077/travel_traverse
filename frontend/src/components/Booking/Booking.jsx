@@ -38,6 +38,7 @@ const Booking = ({tour, avgRating}) => {
             return alert('Please sign in');
         }
 
+
         const res = await fetch(`${BASE_URL}/booking`, {
             method: 'post',
             headers: {
@@ -48,7 +49,7 @@ const Booking = ({tour, avgRating}) => {
         });
 
         if (!res.ok) {
-            return alert('please sign in');
+            return alert('please enter details properly');
         } else {
             navigate("/thank-you");
         }
@@ -56,7 +57,7 @@ const Booking = ({tour, avgRating}) => {
         alert(err.message);
     }
    }
-
+   
   return (
     <div className="booking">
         <div className="booking_top d-flex align-items-center justify-content-between">
