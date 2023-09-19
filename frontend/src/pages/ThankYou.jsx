@@ -15,10 +15,11 @@ const ThankYou = () => {
                 </span>
                 <h1 className="mb-3 fw-semibold">Thank You</h1>
                 <h3 className="mb-4">your tour is booked</h3>
-
+                <Link to="/home">
                 <Button className="btn primary_btn w-25" style={{backgroundColor:'orange', border:'none'}}>
-                  <Link to="/home">Back to Home</Link>
+                  Back to Home
                 </Button>
+                </Link>
              </div>
           </Col>
         </Row>
