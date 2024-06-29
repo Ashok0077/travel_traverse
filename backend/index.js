@@ -37,7 +37,7 @@ mongoose.set("strictQuery", false)
 const connect=async()=>{
     try {
 
-        await mongoose.connect(process.env.MONGO_URI,{
+        await mongoose.connect("mongodb+srv://Ashok:12345123@cluster0.6m2v3lh.mongodb.net/tours_booking?retryWrites=true&w=majority",{
             useNewUrlParser:true,
             useUnifiedTopology:true
         })
