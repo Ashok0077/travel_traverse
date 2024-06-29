@@ -32,11 +32,6 @@ app.use(cors({
          credentials: true
 }));
 
-//for checking mongoDb Atlas connection
-app.get('/health', (req, res) => {
-    const connectionState = mongoose.connection.readyState;
-    res.json({ connected: connectionState === 1 });
-});
 
 mongoose.set("strictQuery", false)
 const connect=async()=>{
@@ -55,6 +50,14 @@ const connect=async()=>{
         
     }
 } 
+
+
+//for checking mongoDb Atlas connection
+app.get('/health', (req, res) => {
+    const connectionState = mongoose.connection.readyState;
+    res.json({ connected: connectionState === 1 });
+});
+
 
 //middleware
 app.use(express.json())
