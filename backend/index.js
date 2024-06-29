@@ -53,10 +53,10 @@ const connect=async()=>{
 
 
 //for checking mongoDb Atlas connection
-app.get('/health', (req, res) => {
-    const connectionState = mongoose.connection.readyState;
-    res.json({ connected: connectionState === 1 });
-});
+fetch('/health')
+  .then(response => response.json())
+  .then(data => console.log('Database connected:', data.connected))
+  .catch(error => console.error('Error:', error));
 
 
 //middleware
