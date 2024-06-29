@@ -51,7 +51,10 @@ const connect=async()=>{
     }
 } 
 
-
+app.get('/health', (req, res) => {
+    const connectionState = mongoose.connection.readyState;
+    res.json({ connected: connectionState === 1 });
+});
 
 
 
