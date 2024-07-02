@@ -67,22 +67,21 @@ export const getSingleTour = async (req,res)=>{
 export const getAllTour = async (req,res)=>{
 
     // for pagination
-    res.json({ inside: "yes" });
-    // const page = parseInt(req.query.page);
+    const page = parseInt(req.query.page);
     
-    // console.log(page);
+    console.log(page);
 
-    // try {
+    try {
 
-    //     const tours = await Tour.find({}).populate('reviews').skip(page*8).limit(8);
+        const tours = await Tour.find({}).populate('reviews').skip(page*8).limit(8);
 
-    //     res.status(200).json({success:true, count:tours.length, message:'successful',data:tours})
+        res.status(200).json({success:true, count:tours.length, message:'successful',data:tours})
         
-    // } catch (err) {
+    } catch (err) {
 
-    //     res.status(404).json({success:false,message:'failed to find'})
+        res.status(404).json({success:false,message:'failed to find'})
         
-    // }
+    }
 };
 
 //get tour by search

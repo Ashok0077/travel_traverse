@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+//Schema
 
 const bookingSchema = new mongoose.Schema(
   {
@@ -30,7 +31,9 @@ const bookingSchema = new mongoose.Schema(
         required: true,
     },
   },
-  { timestamps: true }
+  { timestamps: true }  //careated_At,Updated_At
 );
 
-export default mongoose.model("Booking", bookingSchema);
+//model
+export default mongoose.model("Booking", bookingSchema); //Booking is the name of the model and bookingSchema is the schema we are passing
+//name of the model is shown in the collection, in this case collection name is Bookings , its add s automatically in collection
