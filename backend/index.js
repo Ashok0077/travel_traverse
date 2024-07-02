@@ -21,15 +21,18 @@ const corsOptions = {
 }
 
 
+// app.use(cors({
+//     origin: 'http://localhost:3000',
+//     credentials: true
+// }));
+
 app.use(cors({
-    origin: 'http://localhost:3000',
-    credentials: true
+         origin: ["https://travel-traverse.vercel.app"],
+         method: ["POST","GET"],
+         credentials: true
 }));
 
-// app.use(cors({
-//          origin: 'https://travel-traverse.vercel.app',
-//          credentials: true
-// }));
+
 
 mongoose.set("strictQuery", false)
 const connect=async()=>{
@@ -47,7 +50,13 @@ const connect=async()=>{
         console.log('MongoDB database connection failed')
         
     }
-}
+} 
+
+app.get('/health', (req, res) => {
+    const connectionState = mongoose.connection.readyState;
+    res.json({ connected: connectionState === 1 });
+});
+
 
 //how to connect to mongoDb
 //first built mongoDb schema
@@ -71,9 +80,8 @@ app.use('/api/v1/tours', tourRoute)
 app.use('/api/v1/users', userRoute)
 app.use('/api/v1/review', reviewRoute)
 app.use('/api/v1/booking', bookingRoute)
-
+connect();
 app.listen(port, ()=>
 {
-    connect();
     console.log('server listening on port yaaa huu',port)
 })
