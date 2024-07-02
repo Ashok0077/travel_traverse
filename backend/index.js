@@ -67,9 +67,8 @@ app.use('/api/v1/tours', tourRoute)
 app.use('/api/v1/users', userRoute)
 app.use('/api/v1/review', reviewRoute)
 app.use('/api/v1/booking', bookingRoute)
-
+connect();
 app.listen(port, ()=>
 {
-    connect();
     console.log('server listening on port yaaa huu',port)
 })
