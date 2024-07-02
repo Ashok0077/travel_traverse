@@ -153,7 +153,7 @@ const TourDetail=() => {
                           <div>
                             <h5>{review.username}</h5>
                             <p>
-                              {new Date("8-26-2023").toLocaleDateString(
+                              {new Date(review.createdAt).toLocaleDateString(
                                 "en-US",options
                             )}
                             </p>

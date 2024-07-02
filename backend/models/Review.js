@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-
+//schema
 const reviewSchema = new mongoose.Schema(
   {
     productId: {
@@ -25,4 +25,5 @@ const reviewSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
+//model
 export default mongoose.model("Review", reviewSchema);

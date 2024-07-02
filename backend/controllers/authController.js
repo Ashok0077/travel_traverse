@@ -13,7 +13,7 @@ export const register = async(req,res)=>{
         const hash = bcrypt.hashSync(req.body.password, salt)
 
 
-        const newUser = new User({
+        const newUser = new User({ //here User is name od the model
             username: req.body.username,
             email: req.body.email,
             password: hash,
@@ -25,7 +25,7 @@ export const register = async(req,res)=>{
         res.status(200).json({success:true, message:'successfully Created'})
         
     } catch (err) {
-        res.status(500).json({success:false, message:'Failed to create. Try again'})
+        res.status(500).json({success:false, message:'Failed to create. Try again',err})
     }
 }
 

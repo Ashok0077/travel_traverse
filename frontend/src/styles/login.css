@@ -75,3 +75,27 @@
     font-weight: 500;
 }
 
+@media only screen and (max-width:768px){
+    .login_img{
+        display: none;
+    }
+
+    .login_form{
+        width: 70%;
+        margin: auto;
+    }
+
+    .login_container{
+        padding-bottom: 3rem;
+    }
+}
+
+@media only screen and (max-width:768px){
+    .login_form{
+        width: 100%;
+    }
+
+    .login_container{
+        padding-bottom: 1rem;
+    }
+}

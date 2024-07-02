@@ -1,16 +1,21 @@
-import React,{useState} from 'react'
+import React,{useState, useContext} from 'react'
 import "./booking.css"
 import { Form, FormGroup, ListGroup, ListGroupItem, Button } from 'reactstrap'
 import { useNavigate } from 'react-router-dom'
+import { AuthContext } from '../../context/AuthContext'
+import { BASE_URL } from '../../utils/config'
 
 const Booking = ({tour, avgRating}) => {
 
-   const {price, reviews} = tour
+   const {price, reviews, title} = tour
    const navigate = useNavigate()
 
-   const[credentials, setCredentials] = useState({
-    userId: '01',
-    userEmail: 'ashok@gmail.com',
+   const {user} = useContext(AuthContext)
+
+   const[booking, setBooking] = useState({
+    userId: user && user._id,
+    userEmail: user && user.email,
+    tourName : title,
     fullName:'',
     phone:'',
     guestSize:1,
@@ -18,19 +23,41 @@ const Booking = ({tour, avgRating}) => {
    })
 
    const handleChange = e =>{
-    setCredentials(prev=>({...prev,[e.target.id]:e.target.value}))
+    setBooking(prev=>({...prev,[e.target.id]:e.target.value}))
    }
 
    const serviceFee = 10
-   const totalAmount = Number(price) * Number(credentials.guestSize) + Number(serviceFee)
+   const totalAmount = Number(price) * Number(booking.guestSize) + Number(serviceFee)
 
-   //send data to the server
-   const handleClick = e=>{
-    e.preventDefault()
 
-    navigate("/thank-you")
+   const handleClick = async e => {
+    e.preventDefault();
+
+    try {
+        if (!user) {
+            return alert('Please sign in');
+        }
+
+
+        const res = await fetch(`${BASE_URL}/booking`, {
+            method: 'post',
+            headers: {
+                'content-type': 'application/json'
+            },
+            credentials: 'include',
+            body: JSON.stringify(booking)
+        });
+
+        if (!res.ok) {
+            return alert('please enter details properly');
+        } else {
+            navigate("/thank-you");
+        }
+    } catch (err) {
+        alert(err.message);
+    }
    }
-
+   
   return (
     <div className="booking">
         <div className="booking_top d-flex align-items-center justify-content-between">
