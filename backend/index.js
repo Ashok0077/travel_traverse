@@ -27,7 +27,7 @@ const corsOptions = {
 // }));
 
 app.use(cors({
-    origin: 'https://travel-traverse.vercel.app/',
+    origin: 'https://travel-traverse.vercel.app',
     credentials: true
 }));
 
