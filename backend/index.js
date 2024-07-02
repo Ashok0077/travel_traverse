@@ -27,14 +27,21 @@ const corsOptions = {
 // }));
 
 app.use(cors({
-         origin: ["https://travel-traverse.vercel.app"],
-         method: ["POST","GET"],
-         credentials: true
+    origin: 'https://travel-traverse.vercel.app/',
+    credentials: true
 }));
+
+
+// app.use(cors({
+//          origin: ["https://travel-traverse.vercel.app"],
+//          method: ["POST","GET"],
+//          credentials: true
+// }));
 
 
 
 mongoose.set("strictQuery", false)
+
 const connect=async()=>{
     try {
 
@@ -52,10 +59,7 @@ const connect=async()=>{
     }
 } 
 
-app.get('/health', (req, res) => {
-    const connectionState = mongoose.connection.readyState;
-    res.json({ connected: connectionState === 1 });
-});
+
 
 
 //how to connect to mongoDb
