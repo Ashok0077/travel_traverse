@@ -42,8 +42,8 @@ function Login() {
       if (!res.ok) {
         alert(result.message);
       } else {
-        console.log(result.data);
-        const { token,data,roal } = result.data;
+        console.log(result);
+        const { token,data,roal } = result;
         localStorage.setItem('token', token);
         dispatch({ type: 'LOGIN_SUCCESS', payload: result.data });
         navigate('/');
