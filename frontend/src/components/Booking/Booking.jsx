@@ -40,7 +40,7 @@ const Booking = ({tour, avgRating}) => {
 
         console.log(booking);
         const token = localStorage.getItem("token");
-        console.log(token);
+        //console.log(token);
         const res = await fetch(`${BASE_URL}/booking`, {
             method: 'post',
             headers: {
@@ -98,9 +98,9 @@ const Booking = ({tour, avgRating}) => {
             <ListGroup>
                 <ListGroupItem className="border-0 px-0">
                 <h5 className="d-flex align-items-center gap-1">
-                    ${price} <i class="ri-close-line"></i> 1 person
+                    ${price} <i class="ri-close-line"></i> {` ${booking.guestSize} person`}
                 </h5>
-                <span> ${price}</span>
+                <span> ${totalAmount}</span>
                 </ListGroupItem>
                 <ListGroupItem className="border-0 px-0">
                 <h5>
