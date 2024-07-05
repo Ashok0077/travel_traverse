@@ -41,11 +41,13 @@ const TourDetail=() => {
         reviewText,
         rating: tourRating,
       };
-  
+      
+      const token = localStorage.getItem('token');
       const res = await fetch(`${BASE_URL}/review/${id}`, {
         method: 'post',
         headers: {
           'content-type': 'application/json',
+          Authorization: `Bearer ${token}`,
         },
         credentials: 'include',
         body: JSON.stringify(reviewObj),
