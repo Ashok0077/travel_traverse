@@ -19,7 +19,7 @@ import jwt from 'jsonwebtoken'
 //     })
 // }
 
-const verifyToken = (req, res, next) => {
+export const verifyToken = (req, res, next) => {
     // Check for token in Authorization header
     const authHeader = req.headers.authorization;
     
