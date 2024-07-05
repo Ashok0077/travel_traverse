@@ -2,22 +2,45 @@ import jwt from 'jsonwebtoken'
  
 
 //Middlewares
-export const verifyToken = (req,res,next)=>{
-    const token = req.cookies.accessToken
+// export const verifyToken = (req,res,next)=>{
+//     const token = req.cookies.accessToken
 
-    if(!token){
-        return res.status(401).json({success:false,message:"You're not authorize"})
+//     if(!token){
+//         return res.status(401).json({success:false,message:"You're not authorize"})
+//     }
+
+//     jwt.verify(token, process.env.JWT_SECRET_KEY, (err, user)=>{
+//         if(err){
+//             return res.status(401).json({success:false, message:"token is invalid"})
+//         }
+
+//         req.user = user
+//         next()
+//     })
+// }
+
+const verifyToken = (req, res, next) => {
+    // Check for token in Authorization header
+    const authHeader = req.headers.authorization;
+    
+    if (!authHeader || !authHeader.startsWith('Bearer ')) {
+      return res.status(401).json("Unauthorized: Missing or invalid token");
     }
-
-    jwt.verify(token, process.env.JWT_SECRET_KEY, (err, user)=>{
-        if(err){
-            return res.status(401).json({success:false, message:"token is invalid"})
-        }
-
-        req.user = user
-        next()
-    })
-}
+    
+    // Extract token from Authorization header
+    const token = authHeader.split(' ')[1];
+  
+    jwt.verify(token, process.env.SECRET, (err, data) => {
+      if (err) {
+        return res.status(403).json("Token is not valid!");
+      }
+  
+      // Attach user ID from token to request object
+      req.userId = data._id;
+  
+      next();
+    });
+  };
 
 export const verifyUser = (req,res,next)=>{
     verifyToken(req,res,next,()=>{
