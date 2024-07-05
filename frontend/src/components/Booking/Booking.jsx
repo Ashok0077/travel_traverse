@@ -100,7 +100,7 @@ const Booking = ({tour, avgRating}) => {
                 <h5 className="d-flex align-items-center gap-1">
                     ${price} <i class="ri-close-line"></i> {` ${booking.guestSize} person`}
                 </h5>
-                <span> ${totalAmount}</span>
+                <span> ${totalAmount-10}</span>
                 </ListGroupItem>
                 <ListGroupItem className="border-0 px-0">
                 <h5>
