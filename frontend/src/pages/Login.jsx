@@ -43,6 +43,8 @@ function Login() {
         alert(result.message);
       } else {
         console.log(result.data);
+        const { token,data,roal } = result.data;
+        localStorage.setItem('token', token);
         dispatch({ type: 'LOGIN_SUCCESS', payload: result.data });
         navigate('/');
       }
