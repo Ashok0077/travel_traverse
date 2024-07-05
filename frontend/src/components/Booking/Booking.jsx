@@ -39,16 +39,19 @@ const Booking = ({tour, avgRating}) => {
         }
 
         console.log(booking);
+        const token = localStorage.getItem("token");
         const res = await fetch(`${BASE_URL}/booking`, {
             method: 'post',
             headers: {
-                'content-type': 'application/json'
+                'content-type': 'application/json',
+                Authorization: `Bearer ${token}`,
             },
             credentials: 'include',
             body: JSON.stringify(booking)
         });
 
         if (!res.ok) {
+            console.log(res);
             return alert('please enter details properly');
         } else {
             navigate("/thank-you");
