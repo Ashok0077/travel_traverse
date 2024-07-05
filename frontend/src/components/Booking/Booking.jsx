@@ -40,6 +40,7 @@ const Booking = ({tour, avgRating}) => {
 
         console.log(booking);
         const token = localStorage.getItem("token");
+        console.log(token);
         const res = await fetch(`${BASE_URL}/booking`, {
             method: 'post',
             headers: {
