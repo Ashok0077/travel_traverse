@@ -8,8 +8,10 @@ import Register from'../../pages/Register';
 import SearchResultList from'../../pages/SearchResultList';
 import SearchBar from '../../shared/SearchBar';
 import ThankYou from '../../pages/ThankYou';
+import ScrollToTop from '../../shared/ScrollToTop';
 function Routers() {
   return (<>
+    <ScrollToTop/>
    <Routes> 
       <Route path="/" element={<Navigate to="/home"/>}/>
       <Route path="/home" element={<Home/>} />
