@@ -1,6 +1,6 @@
-/* Ensure the container has no horizontal scroll */
 .container {
   overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 .hero_content h1 {
@@ -42,7 +42,6 @@
 
 .hero_content {
   padding-top: 3.5rem;
-  box-sizing: border-box; /* Prevents padding from affecting width */
 }
 
 .image-container {
@@ -62,7 +61,7 @@
 }
 
 .featured_tour-title {
-  font-size: 2.5rem;
+  font-style: 2.5rem;
   font-weight: 500;
 }
 
@@ -104,7 +103,6 @@
 
 .experience_img img {
   width: 90%;
-  max-width: 100%; /* Prevents overflow */
 }
 
 .gallery_title {
@@ -117,6 +115,7 @@
   transition: 0.3s;
 }
 
+
 .masonry_img:hover {
   transform: scale(1.1);
 }
@@ -126,7 +125,6 @@
   margin-top: 1rem;
 }
 
-/* Media Queries */
 @media only screen and (max-width: 992px) {
   .hero_content {
     font-size: 2.7rem;

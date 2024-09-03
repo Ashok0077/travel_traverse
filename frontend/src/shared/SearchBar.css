@@ -1,7 +1,8 @@
 .search_bar{
     padding: 0.5rem 1rem;
     border-radius: 50px;
-    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+    box-shadow: none;
+    border: 1px solid orange;
     width: max-content;
     margin-top: 50px;
 }
@@ -50,19 +51,7 @@
 }
 
 @media only screen and (max-width: 576px){
-    .search_bar form .form_group{
-        width: 100%;
-    }
-
-    .form_group input{
-        font-size: 0.7rem;
-    }
-
-    .form_group span i{
-        font-size: 0.7rem;
-    }
-
-    .form_group h6{
-        font-size: 1rem;
+    .search_bar{
+       display: none;
     }
 }
