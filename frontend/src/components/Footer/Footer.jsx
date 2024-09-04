@@ -101,7 +101,7 @@ function Footer() {
                   <span><i class="ri-mail-line"></i></span>
                   Email:
                 </h6>
-                <p className="mb-0">vaishnavashok729@gmail.com</p>
+                <p className="mb-0">ashokvaishnav729@gmail.com</p>
                
               </ListGroupItem>
 
@@ -110,14 +110,14 @@ function Footer() {
                   <span><i class="ri-phone-fill"></i></span>
                   Phone:
                 </h6>
-                <p className="mb-0">+01 12345689</p>
+                <p className="mb-0">+91 9871140438</p>
                
               </ListGroupItem>
         </ListGroup>
       </Col>
 
       <Col lg='12'className="text-center pt-5" >
-       <p className="copyright">Copyright 2023, design and developed by AV. All rights reserved</p>
+       <p className="copyright">Copyright 2024, design and developed by AV. All rights reserved</p>
       </Col>
     </Row>
    </Container>
