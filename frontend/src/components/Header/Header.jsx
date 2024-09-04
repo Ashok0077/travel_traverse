@@ -90,10 +90,10 @@ const Header = () => {
                   </>
                 : <>
               
-                  <Button className='login-button'>
+                  <Button className='btn btn-warning'>
                      <Link to="/login">Login</Link>
                   </Button>
-                  <Button className='register-button' >
+                  <Button className='btn btn-warning' >
                      <Link to="/register">Register</Link>
                   </Button>
                 
